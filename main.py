@@ -4,7 +4,7 @@ from telethon import TelegramClient, events
 from telethon.errors import FloodWaitError
 
 api_id = int(os.environ.get("API_ID"))
-api_hash = os.environ.get("API_HASH")
+api_hash = os.environ.get("API_HASH"))
 owner_id = int(os.environ.get("OWNER_ID"))
 
 client = TelegramClient("session", api_id, api_hash)
@@ -13,7 +13,7 @@ client = TelegramClient("session", api_id, api_hash)
 async def clean_all(event):
     if event.sender_id != owner_id:
         return
-    
+
     channel = event.pattern_match.group(1)
     msg = await event.reply(f"Cleaning started for {channel}...")
 
